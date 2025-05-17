@@ -2,100 +2,14 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: url('assets/png/tlo_bez.png') no-repeat center center fixed;
+  background: url('/assets/png/tlo_bez.png') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #e6e6e6;
   background-color: #13151a;
 }
 
-.page2TopDiv {
-  margin: 0 2% 0 2%;
-  text-align: center;
-}
 
-.page2TopDiv h2 {
-  background-color: #22415B;
-  color: white;
-  display: inline-block;
-  padding: 20px 80px;
-  border-radius: 40px;
-}
-
-.page2BottomDiv {
-  background: url('assets/png/folder_papier.png') no-repeat center bottom;
-  background-size: 100% 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.page2BottomDivText {
-  margin: 4% 12% 0 6%;
-  color: black;
-  white-space: pre-line;
-  font-size: 12px;
-  font-family: Arial;
-
-  flex: 1 1 auto;
-  overflow-y: auto;
-}
-
-.page2BottomDivFolderDiv {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7%;
-  padding-bottom: 10%;
-}
-
-.page2BottomDesc{
-  background-color: rgba(0,0,0,0.6);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.randNameDiceWrap {
-  position: relative;
-  display: inline-block;
-}
-
-.dice-img {
-  position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.page2BottomRand{
-  background-color: rgba(0,0,0,0.4);
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 40px;
-  border-radius: 40px;
-  width: 300px;
-  height: 60px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.page2BottomNext {
-  background-color: #f3e3cf;
-  font-size: x-large;
-  font-weight: 500;
-  color: #62543f;
-  padding: 3px 40px;
-  border-radius: 40px;
-}
 
 /* 
 .Page1{

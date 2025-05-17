@@ -1,139 +1,15 @@
 // Global state
-let page = 1;
+let page = 0;
+let currentTrack = 1;
 let detectiveName = '';
 let detectiveDesc = '';
 let solution = { who: '', what: '', where: '' };
-
-// CharacterGenerator data
-const names = [
-  "Inspektor Zawsze-Tam-Gdzie-Ty",
-  "Tropiciel To-Nie-Moje-Okruchy",
-  "Agent Dlaczego-Mnie-Znowu",
-  "Komisarz Chyba-Tędy",
-  "Oficer Pamiętam-Coś-Innego",
-  "Porucznik Nic-Nie-Widziałem-Ale-Wiem",
-  "Detektyw O-To-Chodziło?",
-  "Szef Ciii-To-Tajemnica",
-  "Major Zaraz-Wracam",
-  "Ekspert Zgubiłem-Notatnik"
-];
-const descriptions = [
-  "Zjawił się, zanim pomyślałeś, że coś zniknęło.",
-  "Jego alibi to zawsze… „byłem głodny”.",
-  "Nie chciał być detektywem. Ale znowu wyszło na niego.",
-  "Prowadzi śledztwa... na czuja.",
-  "Twierdzi, że widział, ale to był zupełnie inny dzień.",
-  "Zna prawdę, mimo że spał całą sprawę.",
-  "Myślał, że to gra w berka. Ale i tak rozwiązał sprawę.",
-  "Nigdy nic nie mówi... ale wie wszystko.",
-  "Wyszedł po dowód. Wrócił z herbatą. I rozwiązaniem.",
-  "Nie potrzebuje dowodów. Wystarczy mu intuicja."
-];
 
 // Utility
 function clearRoot() {
   const root = document.getElementById('root');
   root.innerHTML = '';
   return root;
-}
-
-function renderPage0(){
-  const root = clearRoot()
-  const div = document.createElement('div');
-  div.className = 'Page0';
-}
-
-// Page 1
-function renderPage1() {
-  const root = clearRoot();
-  const div = document.createElement('div');
-  div.className = 'Page1';
-  div.style.textAlign = 'center';
-  div.style.marginTop = '40px';
-  div.innerHTML = `
-    <h1>EKSPONAT W KONSERWACJI Gra terenowa Noc Muzeów 2025 Grodzisko Sopot</h1>
-    <p>
-      Jak grać?<br>
-      Zapoznaj się z aktem sprawy. Dowiedz się, co (prawdopodobnie) zniknęło i dlaczego wszyscy udają, że nic się nie stało.<br>
-      Wylosuj swój pseudonim detektywa. To Twoja tajna tożsamość operacyjna. Zapisze się w historii Grodziska.<br>
-      Obejrzyj materiał z monitoringu. Może coś (albo ktoś) rzuci Ci się w oczy…<br>
-      Odwiedź 6 punktów oznaczonych lupą. Każdy punkt to część układanki – zdobądź hasło i wróć do aplikacji.<br>
-      Wpisz hasło z każdego miejsca. Aplikacja sama wykreśli jedną błędną opcję: kto, co lub gdzie.<br>
-      Rozwiąż sprawę. Gdy zostanie Ci po jednej odpowiedzi w każdej kolumnie – kliknij „Rozwiąż sprawę” i poznaj prawdę.
-    </p>
-    <button id="startBtn" style="font-size:1.2em;padding:10px 30px;">Zaczynajmy!</button>
-  `;
-  root.appendChild(div);
-  document.getElementById('startBtn').onclick = () => {
-    page = 2;
-    render();
-  };
-}
-
-
-// // Page 2
-// function renderPage2() {
-//   const root = clearRoot();
-//   const div = document.createElement('div');
-//   div.className = 'Page2';
-//   div.style.display = 'flex';
-//   div.style.flexDirection = 'column';
-//   div.style.minHeight = '100vh';
-//   div.style.textAlign = 'center';
-
-//   // Top section: only "AKTA SPRAWY"
-//   const topDiv = document.createElement('div');
-//   topDiv.style.margin = '40px 20px 0 20px';
-//   topDiv.innerHTML = `
-//     <h2 style="background-color: #22415B; color: white; display: inline-block; padding: 20px 120px; border-radius: 40px;">AKTA SPRAWY</h2>
-//   `;
-
-//   // Bottom section: rest of the content
-//   const bottomDiv = document.createElement('div');
-//   bottomDiv.style.display = 'flex';
-//   bottomDiv.style.flexDirection = 'column';
-//   bottomDiv.style.alignItems = 'center';
-//   bottomDiv.style.margin = '0 20px 0 20px';
-//   bottomDiv.innerHTML = `
-//     <p style="text-align: justify; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-//       Dzień przed Nocą Muzeów wszystko było dopięte na ostatni guzik. Inwentaryzacja przebiegła bez zarzutu – każdy eksponat sprawdzony, podpisany, zamknięty. Dokumenty się zgadzały. Nawet kot Gru zachowywał się podejrzanie spokojnie.
-//       <br><br>
-//       Ale rano… coś się nie zgadzało.
-//       W dokumentacji brakowało jednego eksponatu. Wszyscy byli przekonani, że dzień wcześniej jeszcze był. W gablocie – pusto. Żadnych śladów włamania. Tylko to uczucie, że coś zniknęło. Kustoszka, chcąc uspokoić sytuację i uniknąć niepotrzebnych pytań, zrobiła to, co zawsze działa:
-//       <br><i>zawiesiła kartkę „Eksponat w konserwacji.”</i>
-//       <br><br>
-//       Wezwano Detektywa Gąskę. Pojawił się, przejrzał teren, zapisał coś, zamknął się w magazynku… i zniknął. Została tylko jego walizka, nieczytelne notatki i kilka kart wykluczeń, które bardziej komplikowały niż pomagały.
-//       <br><br>
-//       Teraz sprawa trafia do Ciebie.
-//       <br>
-//       Zbierz tropy, przeprowadź śledztwo i dowiedz się: kto zawinił, gdzie coś ukryto i… co tak naprawdę zniknęło.
-//     </p>
-//     <div style="margin-top: 30px; font-weight: bold;">WYLOSUJ SWÓJ PSEUDONIM DETEKTYWA</div>
-//     <div id="charGenContainer" style="margin-top: 10px;">
-//       <p style="margin: 5px;">Wylosowany pseudonim</p>
-//       <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-//         <div style="display: flex; align-items: center; gap: 10px;">
-//           <div id="randomNameBox" style="min-width: 200px; border: 1px solid #ccc; padding: 10px;">[Tu pojawi się pseudonim]</div>
-//           <img src="dice-icon.png" alt="Dice icon" style="width: 40px; height: 40px;" onclick="rollDetectiveName()" />
-//         </div>
-//         <div id="randomDescBox" style="min-width: 200px; border: 1px solid #ccc; padding: 10px;">[Tu pojawi się pseudonim]</div>
-//       </div>
-//       <button onclick="showDescription()" style="margin-top: 10px; font-size: 1.1em;">opis</button>
-//     </div>
-//     <div style="margin-top: auto; margin-bottom: 40px;">
-//       <button id="page2Next" style="font-size: 1.2em; padding: 10px 30px;">Dalej</button>
-//     </div>
-//   `;
-
-//   div.appendChild(topDiv);
-//   div.appendChild(bottomDiv);
-//   root.appendChild(div);
-// }
-
-function rollDetectiveName() {
-  charGenIndex = Math.floor(Math.random() * names.length);
-  document.getElementById("randName").innerText = names[charGenIndex];
-  document.getElementById("randDesc").innerText = descriptions[charGenIndex];
 }
 
 // Page 3
@@ -248,22 +124,22 @@ function renderPage4() {
             style="
               width:110px;height:60px;border-radius:10px;border:2px solid #ffd700;
               background:${isHeader
-                ? 'linear-gradient(135deg,#232526 0%,#ffd700 100%)'
-                : isActive
-                  ? 'linear-gradient(135deg,#ffd700 60%,#fffbe6 100%)'
-                  : 'linear-gradient(135deg,#232526 0%,#414345 100%)'};
+            ? 'linear-gradient(135deg,#232526 0%,#ffd700 100%)'
+            : isActive
+              ? 'linear-gradient(135deg,#ffd700 60%,#fffbe6 100%)'
+              : 'linear-gradient(135deg,#232526 0%,#414345 100%)'};
               color:${isHeader
-                ? '#232526'
-                : isActive
-                  ? '#232526'
-                  : '#ffd700'};
+            ? '#232526'
+            : isActive
+              ? '#232526'
+              : '#ffd700'};
               font-weight:${isHeader ? 700 : 600};
               font-size:1.1em;
               box-shadow:${isHeader
-                ? '0 2px 16px rgba(255,215,0,0.10)'
-                : isActive
-                  ? '0 2px 16px rgba(255,215,0,0.18)'
-                  : '0 2px 12px rgba(0,0,0,0.18)'};
+            ? '0 2px 16px rgba(255,215,0,0.10)'
+            : isActive
+              ? '0 2px 16px rgba(255,215,0,0.18)'
+              : '0 2px 12px rgba(0,0,0,0.18)'};
               cursor:${isHeader ? 'default' : 'pointer'};
               opacity:${isHeader ? 1 : isActive ? 1 : 0.7};
               transition:all 0.25s cubic-bezier(.4,2,.6,1);
@@ -339,7 +215,7 @@ function renderPage4() {
 // Page 5
 function renderPage5() {
   const root = clearRoot();
-  const awardUrl = 'assets/png/award.png';
+  const awardUrl = '/assets/png/award.png';
   const div = document.createElement('div');
   div.className = 'Page5';
   div.style.maxWidth = '540px';
@@ -383,11 +259,19 @@ function renderPage5() {
 
 // Main render function
 function render() {
-  if (page === 1) renderPage1();
-  else if (page === 2) renderPage2();
-  else if (page === 3) renderPage3();
-  else if (page === 4) renderPage4();
-  else if (page === 5) renderPage5();
+  switch (page) {
+    case 0: { renderPage0(); break; }
+    case 1: { renderPage1(); break; }
+    case 2: { renderPage2(); break; }
+    case 3: { renderPage3(); break; }
+    case 4: { renderPage4(); break; }
+    case 5: { renderPage5(); break; }
+  }
+}
+
+function goToNextPage() {
+  page++;
+  render()
 }
 
 // Start app

@@ -1,0 +1,52 @@
+.page0 {
+  background: url('/assets/png/tlo_gosc_logo.png') no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page0-stripe {
+  background: rgba(1, 42, 62, 0.55);
+  color: #fff;
+  text-align: center;
+  padding: 3em 1em 2em 1em;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+  min-width: 260px;
+  max-width: 700px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page0-title {
+  margin-bottom: 0.8em;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.4);
+  text-decoration-thickness: 5px;
+  text-underline-offset: 6px;
+}
+
+.page0-big {
+  font-size: 1.3em;
+}
+
+.page0-medium {
+  font-size: 1em;
+  margin-bottom: 0.1em;
+}
+
+.page0-small {
+  font-size: 0.7em;
+}
+
+.page0-button{
+  cursor: pointer;
+  margin-top: 20px;
+  width: 40%;
+}

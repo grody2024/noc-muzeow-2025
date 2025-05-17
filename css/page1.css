@@ -1,0 +1,59 @@
+.page1TopDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page1-h2 {
+  background: rgba(1, 42, 62, 0.55);
+  color: white;
+  padding: 20px 60px;
+  border-radius: 40px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.4);
+  text-decoration-thickness: 5px;
+  text-underline-offset: 6px;
+  display: inline-block;
+}
+
+.page1-stripe {
+  background: rgba(1, 42, 62, 0.55);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+  min-width: 260px;
+  max-width: 700px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page1-stripe ul {
+  padding-left: 1.5em;
+  margin-left: 0;
+  list-style-position: inside;
+}
+
+.page1-stripe li {
+  text-indent: -1em;
+  padding-left: 1em;
+  margin-top: 0.7em;
+  font-weight: bold;
+}
+
+.page1BottomNext{
+  background: rgba(1, 42, 62, 0.55);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 0 30px 0;
+}
