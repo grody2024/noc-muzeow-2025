@@ -1,0 +1,115 @@
+.Page3 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Page3Header {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 2px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 80px;
+}
+
+.Page3HeaderBar {
+  background: #2a4663;
+  color: #fff;
+  font-size: 1.35em;
+  font-weight: 700;
+  border-radius: 28px;
+  padding: 16px 38px;
+  margin-top: 10px;
+  margin-left: 0;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  z-index: 2;
+  display: inline-block;
+}
+
+.Page3Camera {
+  display: block;
+  position: relative;
+  margin: 0 0 0 auto;
+  right: 0;
+  width: 110px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.Page3WarningBox {
+  background: #14243b;
+  border: 3px solid #ffd94b;
+  border-radius: 24px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.32);
+  max-width: 480px;
+  margin: 0 auto 0 auto;
+  padding: 36px 24px 32px 24px;
+  color: #ffd94b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Page3WarningTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.Page3WarningIcon {
+  width: 170px;
+  height: 150px;
+  margin-right: 18px;
+}
+
+.Page3WarningTitle {
+  font-size: 2.1em;
+  font-weight: 800;
+  color: #ffd94b;
+  letter-spacing: 0.03em;
+}
+
+.Page3WarningText {
+  color: #ffd94b;
+  font-size: 1.13em;
+  font-weight: 500;
+  margin-bottom: 32px;
+  margin-top: 6px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.Page3WarningBtn {
+  display: block;
+  width: 90%;
+  max-width: 340px;
+  margin: 0 auto 18px auto;
+  padding: 14px 0;
+  font-size: 1.18em;
+  font-weight: 700;
+  border-radius: 28px;
+  border: none;
+  background: #ffd94b;
+  color: #1a2233;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  transition: background 0.18s;
+}
+
+.Page3WarningBtnMain {
+  margin-bottom: 18px;
+}
+
+.Page3WarningBtn:last-child {
+  background: #fff;
+  color: #1a2233;
+  border: 2px solid #ffd94b;
+  margin-bottom: 0;
+}

@@ -1,0 +1,112 @@
+.page5header h2 {
+  background: rgba(1, 42, 62, 0.55);
+  color: white;
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 40px;
+}
+
+.page5content{
+  background: url('/assets/png/folpap.png');
+  background-size: cover;
+}
+
+.page5-note label:first-of-type {
+  margin-top: 20px;
+}
+
+.page5content label{
+  display: block;
+  color: black;
+  margin: 0% 8% 0 8%;
+  font-size: medium;
+}
+.page5content div{
+  color: black;
+  margin: 0 8% 0 8%;
+  font-size: x-small;
+}
+
+.page5-badge-download {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 32px;
+  background: #2d3c4a;
+  color: #fff;
+  border-radius: 16px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.page5-badge-download:hover {
+  background: #1a2530;
+}
+
+.page5-row-container {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  margin-top: 36px;
+  display: block;
+}
+
+.page5-badge-download,
+.page5-row-container .page5-badge-download {
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.page5-row-container > div:first-child {
+  position: absolute;
+  left: 40px; /* move badge container 40px to the right */
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page5-sticky-note {
+  width: 220px;
+  height: 180px;
+  background: url('/assets/png/notatka.png') no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.page5-sticky-content {
+  color: #3a2a13;
+  font-size: 1em;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
+  text-align: left;
+  padding: 84px 18px 12px 28px;
+  width: 100%;
+  height: 100%;
+  word-break: break-word;
+  font-weight: 600;
+  transform: none;
+  background: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: rotate(7deg);
+}
+
+.badgeContainer{
+  top: 80px;
+}

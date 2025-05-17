@@ -69,8 +69,10 @@ const descriptions = [
 
 function rollDetectiveName() {
   charGenIndex = Math.floor(Math.random() * names.length);
-  document.getElementById("randName").innerText = names[charGenIndex];
-  document.getElementById("randDesc").innerText = descriptions[charGenIndex];
+  detectiveName = names[charGenIndex];
+  detectiveDesc = descriptions[charGenIndex];
+  document.getElementById("randName").innerText = detectiveName;
+  document.getElementById("randDesc").innerText = detectiveDesc;
 }
 
 function nextIfNameSet() {
