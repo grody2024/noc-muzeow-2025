@@ -57,7 +57,7 @@ function renderPage3() {
     document.getElementById('videoWarning').innerHTML = '';
     const videoDiv = document.getElementById('videoContainer');
     videoDiv.innerHTML = `
-      <video id="mainVideo" width="100%" style="max-width:100vw;max-height:100vh;border-radius:0;box-shadow:0 2px 18px rgba(0,0,0,0.32);background:#000;display:block;margin:0 auto;" src="assets/mp4/video.mp4" autoplay muted playsinline></video>
+      <video id="mainVideo" width="100%" style="max-width:100vw;max-height:100vh;border-radius:0;box-shadow:0 2px 18px rgba(0,0,0,0.32);background:#000;display:block;margin:0 auto;" src="/assets/mp4/video.mp4" autoplay muted playsinline></video>
     `;
     const video = document.getElementById('mainVideo');
     video.onplay = () => {
@@ -215,7 +215,7 @@ function renderPage4() {
 // Page 5
 function renderPage5() {
   const root = clearRoot();
-  const awardUrl = 'assets/png/award.png';
+  const awardUrl = '/assets/png/award.png';
   const div = document.createElement('div');
   div.className = 'Page5';
   div.style.maxWidth = '540px';
