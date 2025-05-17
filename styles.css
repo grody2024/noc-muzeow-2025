@@ -1,0 +1,10 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('assets/png/tlo_bez.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #e6e6e6;
+  background-color: #13151a;
+}

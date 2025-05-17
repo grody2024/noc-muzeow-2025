@@ -30,8 +30,11 @@ function renderPage0() {
   const buttonImg = document.createElement('img');
   buttonImg.className = 'page0-button';
   buttonImg.src = 'assets/png/zagraj.png';
-  buttonImg.onclick = goToNextPage;
-
+  buttonImg.onclick = function() {
+    playNext();
+    goToNextPage();
+  };
+  
   stripe.appendChild(title);
   stripe.appendChild(big);
   stripe.appendChild(medium);

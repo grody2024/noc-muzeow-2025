@@ -5,6 +5,13 @@ let detectiveName = '';
 let detectiveDesc = '';
 let solution = { who: '', what: '', where: '' };
 
+const tracks = [
+    'assets/mp3/track2.mp3',
+    'assets/mp3/track1.mp3'
+  ];
+let current = 0;
+let audio = null;
+
 // Utility
 function clearRoot() {
   const root = document.getElementById('root');
@@ -27,6 +34,15 @@ function render() {
 function goToNextPage() {
   page++;
   render()
+}
+
+function playNext() {
+  audio = new Audio(tracks[current]);
+  audio.addEventListener('ended', () => {
+    current = (current + 1) % tracks.length;
+    playNext();
+  });
+  audio.play();
 }
 
 // Start app
