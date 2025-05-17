@@ -215,7 +215,7 @@ function renderPage4() {
 // Page 5
 function renderPage5() {
   const root = clearRoot();
-  const awardUrl = '/assets/png/award.png';
+  const awardUrl = 'assets/png/award.png';
   const div = document.createElement('div');
   div.className = 'Page5';
   div.style.maxWidth = '540px';

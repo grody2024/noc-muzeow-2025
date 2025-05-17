@@ -25,7 +25,7 @@ function renderPage2() {
   <span class="page2BottomDesc">WYLOSUJ SWÓJ PSEUDONIM DETEKTYWA</span>
   <div class="randNameDiceWrap">
     <span class="page2BottomRand" id="randName"></span>
-    <img src="/assets/png/kosc.png" alt="Dice icon" class="dice-img" onclick="rollDetectiveName()" />
+    <img src="assets/png/kosc.png" alt="Dice icon" class="dice-img" onclick="rollDetectiveName()" />
   </div>
   <div>
   <span class="page2BottomRand" id="randDesc"></span>
