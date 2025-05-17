@@ -122,8 +122,8 @@ function renderPage4() {
         </div>
         <div class="page4-map-wrap">
           <div class="page4-map-box">
-            <img id="page4MapImg" src="/assets/png/mapa.png" alt="mapa" class="page4-map-img">
-            <img src="/assets/png/lupa.png" alt="lupa" id="page4LupaBtn" class="page4-lupa-btn">
+            <img id="page4MapImg" src="assets/png/mapa.png" alt="mapa" class="page4-map-img">
+            <img src="assets/png/lupa.png" alt="lupa" id="page4LupaBtn" class="page4-lupa-btn">
           </div>
         </div>
         <div id="page4Next" class="page4-next"></div>

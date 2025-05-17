@@ -7,7 +7,7 @@
 }
 
 .page5content{
-  background: url('/assets/png/folpap.png');
+  background: url('assets/png/folpap.png');
   background-size: cover;
 }
 
@@ -75,7 +75,7 @@
 .page5-sticky-note {
   width: 220px;
   height: 180px;
-  background: url('/assets/png/notatka.png') no-repeat center center;
+  background: url('assets/png/notatka.png') no-repeat center center;
   background-size: contain;
   position: absolute;
   right: 0;

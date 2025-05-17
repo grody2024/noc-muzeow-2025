@@ -11,7 +11,7 @@ function renderPage3() {
         <span>MATERIAŁ MONITORINGU</span>
       </div>
     </div>
-    <img src="/assets/png/kamera.png" alt="kamera" class="Page3Camera" />
+    <img src="assets/png/kamera.png" alt="kamera" class="Page3Camera" />
     <div id="videoWarning"></div>
     <div id="videoContainer"></div>
   `;
@@ -23,7 +23,7 @@ function renderPage3() {
     warning.innerHTML = `
       <div class="Page3WarningBox">
         <div class="Page3WarningTop">
-          <img src="/assets/png/uwaga.png" alt="uwaga" class="Page3WarningIcon" />
+          <img src="assets/png/uwaga.png" alt="uwaga" class="Page3WarningIcon" />
           <span class="Page3WarningTitle">UWAGA!</span>
         </div>
         <div class="Page3WarningText">
@@ -45,7 +45,7 @@ function renderPage3() {
     document.getElementById('videoWarning').innerHTML = '';
     const videoDiv = document.getElementById('videoContainer');
     videoDiv.innerHTML = `
-      <video id="mainVideo" width="100%" src="/assets/mp4/video.mp4" autoplay muted playsinline></video>
+      <video id="mainVideo" width="100%" src="assets/mp4/video.mp4" autoplay muted playsinline></video>
     `;
     const video = document.getElementById('mainVideo');
     video.onplay = () => {

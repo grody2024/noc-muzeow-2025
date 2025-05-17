@@ -50,7 +50,7 @@ function renderPage5() {
 
   // Badge image
   const badgeImg = document.createElement('img');
-  badgeImg.src = '/assets/png/odznaka.png';
+  badgeImg.src = 'assets/png/odznaka.png';
   badgeImg.alt = 'Detektyw Odznaka';
   badgeImg.style.width = '120px';
   badgeImg.style.height = '120px';
@@ -60,7 +60,7 @@ function renderPage5() {
 
   // Download button
   const downloadBtn = document.createElement('a');
-  downloadBtn.href = '/assets/png/odznaka.png';
+  downloadBtn.href = 'assets/png/odznaka.png';
   downloadBtn.download = 'odznaka.png';
   downloadBtn.className = 'page5-badge-download';
   downloadBtn.innerText = 'Pobierz nagrodę';

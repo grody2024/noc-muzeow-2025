@@ -29,7 +29,7 @@ function renderPage0() {
 
   const buttonImg = document.createElement('img');
   buttonImg.className = 'page0-button';
-  buttonImg.src = '/assets/png/zagraj.png';
+  buttonImg.src = 'assets/png/zagraj.png';
   buttonImg.onclick = goToNextPage;
 
   stripe.appendChild(title);
