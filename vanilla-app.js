@@ -27,7 +27,7 @@ const descriptions = [
   "Myślał, że to gra w berka. Ale i tak rozwiązał sprawę.",
   "Nigdy nic nie mówi... ale wie wszystko.",
   "Wyszedł po dowód. Wrócił z herbatą. I rozwiązaniem.",
-  "Nie potrzebuje dowodów. Wystarczy mu intuicja (i zgadywanie)."
+  "Nie potrzebuje dowodów. Wystarczy mu intuicja."
 ];
 
 // Utility
@@ -35,6 +35,12 @@ function clearRoot() {
   const root = document.getElementById('root');
   root.innerHTML = '';
   return root;
+}
+
+function renderPage0(){
+  const root = clearRoot()
+  const div = document.createElement('div');
+  div.className = 'Page0';
 }
 
 // Page 1
@@ -45,7 +51,7 @@ function renderPage1() {
   div.style.textAlign = 'center';
   div.style.marginTop = '40px';
   div.innerHTML = `
-    <h1>Noc w Muzeum</h1>
+    <h1>EKSPONAT W KONSERWACJI Gra terenowa Noc Muzeów 2025 Grodzisko Sopot</h1>
     <p>
       Jak grać?<br>
       Zapoznaj się z aktem sprawy. Dowiedz się, co (prawdopodobnie) zniknęło i dlaczego wszyscy udają, że nic się nie stało.<br>
@@ -64,62 +70,70 @@ function renderPage1() {
   };
 }
 
-// CharacterGenerator logic for Page2
-let charGenIndex = Math.floor(Math.random() * names.length);
-function renderCharacterGenerator(container) {
-  container.innerHTML = `
-    <strong>Wylosuj swój pseudonim detektywa:</strong>
-    <div id="charGenName" style="margin:24px auto 0 auto;max-width:400px;background:rgba(255,255,255,0.85);border-radius:8px;padding:16px 20px;font-size:1em;color:rgba(226,41,41,0.85);">
-      ${names[charGenIndex]}
-    </div>
-    <div id="charGenDesc" style="margin:24px auto 0 auto;max-width:400px;background:rgba(255,255,255,0.85);border-radius:8px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:1em;color:#444;">
-      ${descriptions[charGenIndex]}
-    </div>
-    <button id="charGenNext" style="margin-top:16px;padding:6px 20px;font-size:1em;">Losuj ponownie</button>
-  `;
-  document.getElementById('charGenNext').onclick = () => {
-    let next;
-    do {
-      next = Math.floor(Math.random() * names.length);
-    } while (next === charGenIndex && names.length > 1);
-    charGenIndex = next;
-    renderCharacterGenerator(container);
-  };
-}
 
-// Page 2
-function renderPage2() {
-  const root = clearRoot();
-  const div = document.createElement('div');
-  div.className = 'Page2';
-  div.style.display = 'flex';
-  div.style.flexDirection = 'column';
-  div.style.minHeight = '100vh';
-  div.style.textAlign = 'center';
-  div.innerHTML = `
-    <div style="margin-top:40px;">
-      <h2>Twoja tajna tożsamość</h2>
-      <p>
-        Dzień przed Nocą Muzeów wszystko było dopięte na ostatni guzik. Inwentaryzacja przebiegła bez zarzutu – każdy eksponat sprawdzony, podpisany, zamknięty. Dokumenty się zgadzały. Nawet kot Gru zachowywał się podejrzanie spokojnie.
-        Ale rano… coś się nie zgadzało.
-        W dokumentacji brakowało jednego eksponatu. Wszyscy byli przekonani, że dzień wcześniej jeszcze był. W gablocie – pusto. Żadnych śladów włamania. Tylko to uczucie, że coś zniknęło. Kustoszka, chcąc uspokoić sytuację i uniknąć niepotrzebnych pytań, zrobiła to, co zawsze działa: zawiesiła kartkę „Eksponat w konserwacji.”
-        Wezwano Detektywa Gąskę. Pojawił się, przejrzał teren, zapisał coś, zamknął się w magazynku... i zniknął. Została tylko jego walizka, nieczytelne notatki i kilka kart wykluczeń, które bardziej komplikowały niż pomagały.
-        Teraz sprawa trafia do Ciebie. Zbierz tropy, przeprowadź śledztwo i dowiedz się: kto zawinił, gdzie coś ukryto i… co tak naprawdę zniknęło.
-      </p>
-    </div>
-    <div id="charGenContainer"></div>
-    <div style="margin-top:auto;margin-bottom:40px;">
-      <button id="page2Next" style="font-size:1.2em;padding:10px 30px;">Next</button>
-    </div>
-  `;
-  root.appendChild(div);
-  renderCharacterGenerator(document.getElementById('charGenContainer'));
-  document.getElementById('page2Next').onclick = () => {
-    detectiveName = names[charGenIndex];
-    detectiveDesc = descriptions[charGenIndex];
-    page = 3;
-    render();
-  };
+// // Page 2
+// function renderPage2() {
+//   const root = clearRoot();
+//   const div = document.createElement('div');
+//   div.className = 'Page2';
+//   div.style.display = 'flex';
+//   div.style.flexDirection = 'column';
+//   div.style.minHeight = '100vh';
+//   div.style.textAlign = 'center';
+
+//   // Top section: only "AKTA SPRAWY"
+//   const topDiv = document.createElement('div');
+//   topDiv.style.margin = '40px 20px 0 20px';
+//   topDiv.innerHTML = `
+//     <h2 style="background-color: #22415B; color: white; display: inline-block; padding: 20px 120px; border-radius: 40px;">AKTA SPRAWY</h2>
+//   `;
+
+//   // Bottom section: rest of the content
+//   const bottomDiv = document.createElement('div');
+//   bottomDiv.style.display = 'flex';
+//   bottomDiv.style.flexDirection = 'column';
+//   bottomDiv.style.alignItems = 'center';
+//   bottomDiv.style.margin = '0 20px 0 20px';
+//   bottomDiv.innerHTML = `
+//     <p style="text-align: justify; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+//       Dzień przed Nocą Muzeów wszystko było dopięte na ostatni guzik. Inwentaryzacja przebiegła bez zarzutu – każdy eksponat sprawdzony, podpisany, zamknięty. Dokumenty się zgadzały. Nawet kot Gru zachowywał się podejrzanie spokojnie.
+//       <br><br>
+//       Ale rano… coś się nie zgadzało.
+//       W dokumentacji brakowało jednego eksponatu. Wszyscy byli przekonani, że dzień wcześniej jeszcze był. W gablocie – pusto. Żadnych śladów włamania. Tylko to uczucie, że coś zniknęło. Kustoszka, chcąc uspokoić sytuację i uniknąć niepotrzebnych pytań, zrobiła to, co zawsze działa:
+//       <br><i>zawiesiła kartkę „Eksponat w konserwacji.”</i>
+//       <br><br>
+//       Wezwano Detektywa Gąskę. Pojawił się, przejrzał teren, zapisał coś, zamknął się w magazynku… i zniknął. Została tylko jego walizka, nieczytelne notatki i kilka kart wykluczeń, które bardziej komplikowały niż pomagały.
+//       <br><br>
+//       Teraz sprawa trafia do Ciebie.
+//       <br>
+//       Zbierz tropy, przeprowadź śledztwo i dowiedz się: kto zawinił, gdzie coś ukryto i… co tak naprawdę zniknęło.
+//     </p>
+//     <div style="margin-top: 30px; font-weight: bold;">WYLOSUJ SWÓJ PSEUDONIM DETEKTYWA</div>
+//     <div id="charGenContainer" style="margin-top: 10px;">
+//       <p style="margin: 5px;">Wylosowany pseudonim</p>
+//       <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+//         <div style="display: flex; align-items: center; gap: 10px;">
+//           <div id="randomNameBox" style="min-width: 200px; border: 1px solid #ccc; padding: 10px;">[Tu pojawi się pseudonim]</div>
+//           <img src="dice-icon.png" alt="Dice icon" style="width: 40px; height: 40px;" onclick="rollDetectiveName()" />
+//         </div>
+//         <div id="randomDescBox" style="min-width: 200px; border: 1px solid #ccc; padding: 10px;">[Tu pojawi się pseudonim]</div>
+//       </div>
+//       <button onclick="showDescription()" style="margin-top: 10px; font-size: 1.1em;">opis</button>
+//     </div>
+//     <div style="margin-top: auto; margin-bottom: 40px;">
+//       <button id="page2Next" style="font-size: 1.2em; padding: 10px 30px;">Dalej</button>
+//     </div>
+//   `;
+
+//   div.appendChild(topDiv);
+//   div.appendChild(bottomDiv);
+//   root.appendChild(div);
+// }
+
+function rollDetectiveName() {
+  charGenIndex = Math.floor(Math.random() * names.length);
+  document.getElementById("randName").innerText = names[charGenIndex];
+  document.getElementById("randDesc").innerText = descriptions[charGenIndex];
 }
 
 // Page 3
